@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Caleb and Maria's Wedding</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/full-width-pics.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Caleb and Maria's Wedding</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">RSVP
+              <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Registry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5 mt-3">
+    <div class="container" style="width: 30%">
+      <form id="rsvp-form" >
+       <div class="form-group">
+         <label for="email" class="control-label">Email address:</label>
+         <input type="email" class="form-control" name="name" id="email" placeholder="example@example.email">
+       </div>
+       <div class="form-group">
+         <label for="name">Name:</label>
+         <input type="text" class="form-control" name="name" id="name" placeholder="The Example Family">
+       </div>
+       <div class="form-group">
+         <label for="phone">Phone Number:</label>
+         <input type="phone" class="form-control" name="phone" id="tel" placeholder="+1(999)999-9999">
+       </div>
+       <div class="form-group">
+         <label for="attendees">Attendees (include yourself):</label>
+         <input type="number" name="attendees" min="0" max="5" step="1" value="1">
+       </div>
+       <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; The Eubanks Family 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/jquery-validation/jquery.validate.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#rsvp-form').validate({
+            rules: {
+                name: {
+                    minlength: 2,
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                attendees: {
+                    min: 1,
+                    max: 5,
+                    required: true
+                },
+                phone: {
+                    required: false,
+                    minlength: 7
+                }
+            },
+            highlight: function (element) {
+                $(element).closest('.control-group').removeClass('has-success').addClass('has-error');
+            },
+            success: function (element) {
+                console.log(element);
+                element.addClass('valid').closest('.control-group').removeClass('has-error').addClass('has-success');
+            }
+        });
+      });
+    </script>
+</body>
+
+</html>
