@@ -14,7 +14,7 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/full-width-pics.css" rel="stylesheet">
+  <link href="css/rsvp.css" rel="stylesheet">
 
 </head>
 
@@ -49,6 +49,10 @@
 
   <section class="py-5 mt-3">
     <div class="container" style="width: 30%">
+      <div id="deadline">
+        <span>RSVP Deadline: June 1, 2019</span><br> 
+        <span id="clock" class="clock"></span>
+      </div>
       <form id="rsvp-form" >
        <div class="form-group">
          <label for="email" class="control-label">Email address:</label>
@@ -81,7 +85,9 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/jquery-validation/jquery.validate.js"></script>
+  <script src="vendor/jquery.countdown/jquery.countdown.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/momentjs/moment.min.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function () {
@@ -113,6 +119,10 @@
                 element.addClass('valid').closest('.control-group').removeClass('has-error').addClass('has-success');
             }
         });
+      });
+      var deadline = moment("2019-06-01 00:00").utcOffset(-6);
+      $('#clock').countdown(deadline.toDate(), function(event) {
+        $(this).html(event.strftime('%D days %H:%M:%S'));
       });
     </script>
 </body>
