@@ -49,20 +49,27 @@
 
   <section class="py-5 mt-3">
     <div class="container" style="width: 30%">
-      <form id="rsvp-form" >
-       <div class="form-group">
-         <label for="email" class="control-label">Email address:</label>
-         <input type="email" class="form-control" name="name" id="email" placeholder="example@example.email">
-       </div>
+      <form id="rsvp-form">
        <div class="form-group">
          <label for="name">Name:</label>
          <input type="text" class="form-control" name="name" id="name" placeholder="The Example Family">
        </div>
        <div class="form-group">
+         <label for="attending">Attending&nbsp;&nbsp;</label>
+         <select class="form-control" name="attending" id="attending">
+            <option value="true">Yes</option>
+            <option value="false" selected>No</option>
+         </select>
+       </div>
+       <div class="form-group addl-fields" style="display: none;">
+         <label for="email" class="control-label">Email address:</label>
+         <input type="email" class="form-control" name="name" id="email" placeholder="example@example.email">
+       </div>
+       <div class="form-group addl-fields" style="display: none;">
          <label for="phone">Phone Number:</label>
          <input type="phone" class="form-control" name="phone" id="tel" placeholder="+1(999)999-9999">
        </div>
-       <div class="form-group">
+       <div class="form-group addl-fields" style="display: none;">
          <label for="attendees">Attendees (include yourself):</label>
          <input type="number" name="attendees" min="0" max="5" step="1" value="1">
        </div>
@@ -85,6 +92,14 @@
 
     <script type="text/javascript">
       $(document).ready(function () {
+        $('#attending').change(function(){
+            if (this.value == "true"){
+                $('div.addl-fields').show();
+            }
+            else{
+                $('div.addl-fields').hide();
+            }
+        });
         $('#rsvp-form').validate({
             rules: {
                 name: {
