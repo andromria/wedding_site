@@ -8,3 +8,7 @@
 label.is-invalid {
     color: red;
 }
+
+.addl-fields {
+    display: none;
+}
