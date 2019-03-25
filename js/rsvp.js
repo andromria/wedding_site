@@ -26,9 +26,8 @@ $(document).ready(function () {
                 $(element).removeClass(validClass);
             }
         },
+        ignore: 'hidden',
         submitHandler: function(form, event){
-          //event.preventDefault(); // avoid to execute the actual submit of the form.
-
           var form = $(this);
           var url = form.attr('action');
 
