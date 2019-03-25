@@ -13,6 +13,9 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- FlipClock style sheet -->
+  <link href="vendor/flipclock/flipclock.css" rel="stylesheet">
+  
   <!-- Custom styles for this template -->
   <link href="css/rsvp.css" rel="stylesheet">
 
@@ -20,126 +23,87 @@
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Caleb and Maria's Wedding</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">RSVP
-              <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Registry</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Caleb and Maria's Wedding</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">RSVP<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Registry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <section class="py-5 mt-3">
-    <div class="container" style="width: 30%">
-      <div id="deadline">
-        <span>RSVP Deadline: June 1, 2019</span><br> 
-        <span id="clock" class="clock"></span>
-      </div>
-      <form id="rsvp-form">
-       <div class="form-group">
-         <label for="name">Name:</label>
-         <input type="text" class="form-control" name="name" id="name" placeholder="The Example Family">
-       </div>
-       <div class="form-group">
-         <label for="attending">Attending&nbsp;&nbsp;</label>
-         <select class="form-control" name="attending" id="attending">
-            <option value="true">Yes</option>
-            <option value="false" selected>No</option>
-         </select>
-       </div>
-       <div class="form-group addl-fields" style="display: none;">
-         <label for="email" class="control-label">Email address:</label>
-         <input type="email" class="form-control" name="name" id="email" placeholder="example@example.email">
-       </div>
-       <div class="form-group addl-fields" style="display: none;">
-         <label for="phone">Phone Number:</label>
-         <input type="phone" class="form-control" name="phone" id="tel" placeholder="+1(999)999-9999">
-       </div>
-       <div class="form-group addl-fields" style="display: none;">
-         <label for="attendees">Attendees (include yourself):</label>
-         <input type="number" name="attendees" min="1" max="5" step="1" value="1">
-       </div>
-       <button type="submit" class="btn btn-success">Submit</button>
-      </form>
-    </div>
-  </section>
+    <section class="py-5 mt-3">
+        <div class="container">
+            <div class="row">
+                <div id="deadline" class="col-12">
+                    <span>RSVP Deadline: June 1, 2019</span><br> 
+                    <div id="clock"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form id="rsvp-form">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="The Example Family">
+                        </div>
+                        <div class="form-group">
+                            <label for="attending">Attending</label>
+                            <select class="form-control" name="attending" id="attending">
+                                <option value="true" selected>Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group addl-fields">
+                            <label for="email" class="control-label">Email address:</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="example@example.email">
+                        </div>
+                        <div class="form-group addl-fields">
+                            <label for="phone">Phone Number:</label>
+                            <input type="phone" class="form-control" name="phone" id="phone" placeholder="+1(999)999-9999">
+                        </div>
+                        <div class="form-group addl-fields">
+                            <label for="attendees">Attendees (include yourself):</label>
+                            <input type="number" class="form-control" name="attendees" min="1" max="5" step="1" value="1">
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; The Eubanks Family 2019</p>
+        <p class="m-0 text-center text-white">Copyright &copy; The Eubanks Family 2019</p>
     </div>
     <!-- /.container -->
-  </footer>
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/jquery-validation/jquery.validate.js"></script>
-  <script src="vendor/jquery.countdown/jquery.countdown.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/momentjs/moment.min.js"></script>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/additional-methods.min.js"></script>
+    <script src="vendor/flipclock/flipclock.min.js"></script>
 
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#attending').change(function(){
-            if (this.value == "true"){
-                $('div.addl-fields').show();
-            }
-            else{
-                $('div.addl-fields').hide();
-            }
-        });
-        $('#rsvp-form').validate({
-            rules: {
-                name: {
-                    minlength: 2,
-                    required: true
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                attendees: {
-                    min: 1,
-                    max: 5,
-                    required: true
-                },
-                phone: {
-                    required: false,
-                    minlength: 7
-                }
-            },
-            highlight: function (element) {
-                $(element).closest('.control-group').removeClass('has-success').addClass('has-error');
-            },
-            success: function (element) {
-                console.log(element);
-                element.addClass('valid').closest('.control-group').removeClass('has-error').addClass('has-success');
-            }
-        });
-      });
-      var deadline = moment("2019-06-01 00:00").utcOffset(-6);
-      $('#clock').countdown(deadline.toDate(), function(event) {
-        $(this).html(event.strftime('%D days %H:%M:%S'));
-      });
-    </script>
+    <script src="js/rsvp.js"></script>
 </body>
 
 </html>
