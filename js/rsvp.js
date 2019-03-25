@@ -25,6 +25,26 @@ $(document).ready(function () {
             if (element.value === ''){
                 $(element).removeClass(validClass);
             }
+        },
+        submitHandler: function(form, event){
+          //event.preventDefault(); // avoid to execute the actual submit of the form.
+
+          var form = $(this);
+          var url = form.attr('action');
+
+          $.ajax({
+              type: "POST",
+              url: url,
+              data: form.serialize(), // serializes the form's elements.
+              success: function(data){
+                  $('#rsvp-form-container').hide();
+                  $('#rsvp-submitted-container').show();
+              },
+              error: function(){
+                  $('#rsvp-form-container').hide();
+                  $('#rsvp-error-container').show();
+              }
+           });
         }
     });
     $('#attending').change(function(){

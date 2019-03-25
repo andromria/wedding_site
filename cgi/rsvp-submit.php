@@ -1,7 +1,7 @@
 <?php
     $config = include('config.php');
-    
-    
+
+
     $to = $config['email_to'];
     $subject = $config['email_subject'];
     $message = json_encode($_POST);

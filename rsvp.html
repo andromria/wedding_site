@@ -15,7 +15,7 @@
 
   <!-- FlipClock style sheet -->
   <link href="vendor/flipclock/flipclock.css" rel="stylesheet">
-  
+
   <!-- Custom styles for this template -->
   <link href="css/rsvp.css" rel="stylesheet">
 
@@ -50,16 +50,16 @@
     </nav>
 
     <section class="py-5 mt-3">
-        <div class="container">
+        <div id="rsvp-form-container" class="container">
             <div class="row">
                 <div id="deadline" class="col-12">
-                    <span>RSVP Deadline: June 1, 2019</span><br> 
+                    <span>RSVP Deadline: June 1, 2019</span><br>
                     <div id="clock"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <form id="rsvp-form" action="rsvp-submit.php" method="post">
+                    <form id="rsvp-form" action="cgi/rsvp-submit.php" method="post">
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" class="form-control" name="name" id="name" placeholder="The Example Family">
@@ -87,6 +87,21 @@
                     </form>
                 </div>
             </div>
+        </div>
+        <div id="rsvp-submitted-container" class="container">
+          <div class="row">
+            <div "col-12">
+              <h2>Thank you for submitting your RSVP!</h2>
+            </div>
+          </div>
+        </div>
+        <div id="rsvp-error-container" class="container">
+          <div class="row">
+            <div "col-12">
+              <h2>There was a problem processing your RSVP</h2>
+              <p>Please try again later</p>
+            </div>
+          </div>
         </div>
     </section>
 

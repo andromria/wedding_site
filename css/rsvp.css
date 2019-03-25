@@ -12,3 +12,12 @@ label.is-invalid {
 .addl-fields {
     display: none;
 }
+
+#rsvp-submitted-container {
+  display: none;
+}
+
+#rsvp-error-container {
+  color: red;
+  display: none;
+}
