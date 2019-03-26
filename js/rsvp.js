@@ -26,15 +26,13 @@ $(document).ready(function () {
                 $(element).removeClass(validClass);
             }
         },
-        ignore: ':hidden',
         submitHandler: function(form, event){
-          // this is a hack
-          this = $(this);
-          var url = this.attr('action');
+          var form = $(form);
+          var url = form.attr('action');
           $.ajax({
               type: "POST",
               url: url,
-              data: this.serialize(), // serializes the form's elements.
+              data: form.serialize(), // serializes the form's elements.
               success: function(data){
                   $('#rsvp-form-container').hide();
                   $('#rsvp-submitted-container').show();
