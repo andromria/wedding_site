@@ -17,6 +17,7 @@ $(document).ready(function () {
         validClass: 'is-valid',
         errorClass: 'is-invalid',
         unhighlight: function(element, errorClass, validClass){
+            $.validator.defaults.unhighlight(element, errorClass, validClass);
             if (element.value === ''){
                 $(element).removeClass(validClass);
             }
