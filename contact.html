@@ -17,15 +17,14 @@
   <link href="vendor/flipclock/flipclock.css" rel="stylesheet"></link>
 
   <!-- Custom styles for this template -->
-  <link href="css/rsvp.css" rel="stylesheet"></link>
+  <link href="css/contact.css" rel="stylesheet"></link>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
-  <script src="vendor/jquery-validation/additional-methods.min.js"></script>
   <script src="vendor/flipclock/flipclock.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/rsvp.js"></script>
+  <script src="js/contact.js"></script>
 
 </head>
 
@@ -44,15 +43,15 @@
                         <a class="nav-link" href="index.html">Home
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="rsvp.html">RSVP</a>
-                        <span class="sr-only">(current)</span>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Registry</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="contact.html">Contact</a>
+                        <span class="sr-only">(current)</span>
                     </li>
                 </ul>
             </div>
@@ -60,55 +59,38 @@
     </nav>
 
     <section class="py-5 mt-3">
-        <div id="rsvp-form-container" class="container">
-            <div class="row">
-                <div id="deadline" class="col-12">
-                    <span>RSVP Deadline: June 1, 2019</span><br/>
-                    <div id="clock"></div>
-                </div>
-            </div>
+        <div id="contact-form-container" class="container">
             <div class="row">
                 <div class="col-12">
-                    <form id="rsvp-form" action="cgi/rsvp-submit.php" method="post">
+                    <form id="contact-form" action="cgi/contact-submit.php" method="post">
                         <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="The Example Family"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="attending">Attending</label>
-                            <select class="form-control" name="attending" id="attending">
-                                <option value="true">Yes</option>
-                                <option value="false" selected="selected">No</option>
-                            </select>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name"></input>
                         </div>
                         <div class="form-group addl-fields">
                             <label for="email" class="control-label">Email address:</label>
                             <input type="email" class="form-control" name="email" id="email" placeholder="example@example.email"></input>
                         </div>
-                        <div class="form-group addl-fields">
-                            <label for="phone">Phone Number:</label>
-                            <input type="phone" class="form-control" name="phone" id="phone" placeholder="+1(999)999-9999"></input>
-                        </div>
-                        <div class="form-group addl-fields">
-                            <label for="attendees">Attendees (include yourself):</label>
-                            <input type="number" class="form-control" name="attendees" min="1" max="5" step="1" value="1"></input>
+                        <div class="form-group">
+                            <label for="name">Message:</label>
+                            <textarea class="form-control" rows="10" name="message" id="message"></textarea>
                         </div>
                         <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
-        <div id="rsvp-submitted-container" class="container">
+        <div id="contact-submitted-container" class="container">
           <div class="row">
             <div class="col-12">
-              <h2>Thank you for submitting your RSVP!</h2>
+              <h2>Thank you, we'll get back to you shortly!</h2>
             </div>
           </div>
         </div>
-        <div id="rsvp-error-container" class="container">
+        <div id="contact-error-container" class="container">
           <div class="row">
             <div class="col-12">
-              <h2>There was a problem processing your RSVP</h2>
+              <h2>There was a problem processing your message.</h2>
               <p>Please try again later</p>
             </div>
           </div>

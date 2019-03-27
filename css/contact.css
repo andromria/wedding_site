@@ -1,0 +1,12 @@
+label.is-invalid {
+    color: red;
+}
+
+#contact-submitted-container {
+  display: none;
+}
+
+#contact-error-container {
+  color: red;
+  display: none;
+}
