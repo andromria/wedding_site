@@ -3,7 +3,7 @@
 
 
     $to = $config['email_to'];
-    $subject = 'RSVP';
+    $subject = 'CONTACT';
     $message = json_encode($_POST);
     $headers = 'From: ' . $config['email_from'] . "\r\n" .
         'Reply-To: ' . $config['email_from'] . "\r\n" .
