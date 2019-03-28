@@ -1,14 +1,36 @@
 <?php
     $config = include('config.php');
 
-
+    $msg_dict = array(
+      'ip' => $_SERVER['REMOTE_ADDR'];
+    );
+    if (array_key_exists('HTTP_X_FORWARDED_FOR', $_SERVER)){
+      $msg_dict['proxy'] = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+    if (array_key_exists('name', $_POST)){
+      $msg_dict['name'] = $_POST['name'];
+    }
+    else {
+      http_response_code(400);
+    }
+    if (array_key_exists('attending', $_POST)){
+      $msg_dict['attending'] = $_POST['attending'];
+    }
+    else {
+      http_response_code(400);
+    }
+    if (array_key_exists('email', $_POST)){
+      $msg_dict['email'] = $_POST['email'];
+    }
+    if (array_key_exists('phone', $_POST)){
+      $msg_dict['phone'] = $_POST['phone'];
+    }
     $to = $config['email_to'];
     $subject = 'RSVP';
-    $message = json_encode($_POST);
+    $message = json_encode($msg_dict);
     $headers = 'From: ' . $config['email_from'] . "\r\n" .
         'Reply-To: ' . $config['email_from'] . "\r\n" .
         'X-Mailer: ' . $config['email_agent'];
 
     mail($to, $subject, $message, $headers);
-    echo 'submitted';
 ?>
