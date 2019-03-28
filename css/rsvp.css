@@ -5,6 +5,10 @@
   font-size: 2em;
 }
 
+#clock {
+  margin-top: 1em;
+}
+
 label.is-invalid {
     color: red;
 }

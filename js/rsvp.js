@@ -52,12 +52,17 @@ $(document).ready(function () {
           $('div.addl-fields').hide();
         }
     });
-    var deadline = (Date.parse("Sat Jun 01 2019 00:00:00 GMT-0500 (Central Daylight Time)") - Date.now()) / 1000;
+    var deadline = new Date(Date.parse("Sat Jun 01 2019 00:00:00 GMT-0500 (Central Daylight Time)") - Date.now() / 1000);
     if (deadline > 0) {
-        $('#clock').FlipClock(deadline, {
+        FlipClock.make(document.querySelector('#clock'), deadline, {
+          face: 'DayCounter',
+          countdown: true,
+          showLabels: true
+        });
+        /*$('#clock').FlipClock(deadline, {
             countdown: true,
             clockFace: 'DailyCounter',
-        });
+        });*/
     } else {
         $('#clock').hide();
         $('#rsvp-form').hide();
