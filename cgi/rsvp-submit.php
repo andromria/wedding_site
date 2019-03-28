@@ -1,9 +1,10 @@
 <?php
     $config = include('config.php');
 
-    $msg_dict = array(
-      'ip' => $_SERVER['REMOTE_ADDR'];
-    );
+    $msg_dict = array();
+    if (array_key_exists('REMOTE_ADDR', $_SERVER)){
+      $msg_dict['ip'] = $_SERVER['REMOTE_ADDR'];
+    }
     if (array_key_exists('HTTP_X_FORWARDED_FOR', $_SERVER)){
       $msg_dict['proxy'] = $_SERVER['HTTP_X_FORWARDED_FOR'];
     }
