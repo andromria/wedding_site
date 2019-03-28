@@ -3,6 +3,7 @@
 
 
     $msg_dict = array();
+    $msg_dict['time'] = time();
     if (array_key_exists('REMOTE_ADDR', $_SERVER)){
       $msg_dict['ip'] = $_SERVER['REMOTE_ADDR'];
     }
