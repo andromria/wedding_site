@@ -27,6 +27,12 @@
     if (array_key_exists('phone', $_POST)){
       $msg_dict['phone'] = $_POST['phone'];
     }
+    if (array_key_exists('attendees', $_POST)){
+      $msg_dict['attendees'] = $_POST['attendees'];
+    }
+    else {
+      http_response_code(400);
+    }
     $to = $config['email_to'];
     $subject = 'RSVP';
     $message = json_encode($msg_dict);
