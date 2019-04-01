@@ -14,6 +14,11 @@ $(document).ready(function () {
             phone: {
                 required: false,
                 phoneUS: true
+            },
+            attendees: {
+                required: true,
+                min: 1,
+                max: 5
             }
         },
         validClass: 'is-valid',
