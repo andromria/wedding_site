@@ -8,14 +8,18 @@ body {
 }
 
 .bg-image-full {
-  background: no-repeat left center scroll;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 25% 50%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
 .bg-image-full2 {
-  background: no-repeat right center scroll;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 75% 50%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
