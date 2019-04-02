@@ -17,16 +17,18 @@
   <link href="vendor/flipclock/flipclock.css" rel="stylesheet"></link>
 
   <!-- Custom styles for this template -->
+  <link href="css/countdown.css" rel="stylesheet"></link>
+  <!-- Custom styles for this template -->
   <link href="css/rsvp.css" rel="stylesheet"></link>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
   <script src="vendor/jquery-validation/additional-methods.min.js"></script>
-  <script src="vendor/flipclock/flipclock.min.js"></script>
+  <script src="vendor/lodash/lodash.min.js"></script>
+  <script src="vendor/jquery.countdown/jquery.countdown.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="js/rsvp.js"></script>
-
 </head>
 
 <body>
@@ -62,9 +64,20 @@
     <section class="py-5 mt-3">
         <div id="rsvp-form-container" class="container">
             <div class="row">
-                <div id="deadline" class="col-12">
-                    <span>RSVP Deadline: June 1, 2019</span><br/>
-                    <div id="clock"></div>
+                <div class="col-12">
+                  <div class="flip-clock">
+                    <span id="deadline">RSVP Deadline: June 1, 2019</span><br/>
+                    <div class="countdown-container" id="flip-clock"></div>
+                  </div>
+                  <script type="text/template" id="flip-clock-template">
+                    <div class="time <%= label %>">
+                      <span class="count curr top"><%= curr %></span>
+                      <span class="count next top"><%= next %></span>
+                      <span class="count next bottom"><%= next %></span>
+                      <span class="count curr bottom"><%= curr %></span>
+                      <span class="label"><%= label.length < 6 ? label : label.substr(0, 3)  %></span>
+                    </div>
+                  </script>
                 </div>
             </div>
             <div class="row">
