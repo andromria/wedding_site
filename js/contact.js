@@ -1,4 +1,4 @@
-refreshCaptcha() {
+function refreshCaptcha() {
   $('#captchaimg').attr('src', "cgi/captcha.php?time=" + new Date();
 }
 
