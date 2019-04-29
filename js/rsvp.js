@@ -1,3 +1,7 @@
+function refreshCaptcha() {
+  $('#captchaimg').attr('src', "cgi/captcha.php?time=" + (new Date()).getTime());
+}
+
 $(document).ready(function () {
     $('#rsvp-form').validate({
         rules: {
@@ -19,6 +23,11 @@ $(document).ready(function () {
                 required: true,
                 min: 1,
                 max: 5
+            },
+            captcha_code: {
+                required: true,
+                minlength: 6,
+                maxlength: 6
             }
         },
         validClass: 'is-valid',
