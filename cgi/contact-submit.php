@@ -43,5 +43,6 @@
       }else{// Captcha verification is Correct. Final Code Execute here!
         echo 'captcha failed';
         http_response_code(400);
+      }
     }
 ?>
