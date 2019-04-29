@@ -1,4 +1,9 @@
+refreshCaptcha() {
+  $('#captchaimg').attr('src', "cgi/captcha.php?time=" + new Date();
+}
+
 $(document).ready(function () {
+    refreshCaptcha();
     $('#contact-form').validate({
         rules: {
             name: {
@@ -23,6 +28,7 @@ $(document).ready(function () {
             }
         },
         submitHandler: function(form, event){
+          $('#captcha_code').val('').removeClass('is-invalid');
           var form = $(form);
           var url = form.attr('action');
           $.ajax({
@@ -33,9 +39,14 @@ $(document).ready(function () {
                   $('#contact-form-container').hide();
                   $('#contact-submitted-container').show();
               },
-              error: function(){
+              error: function(response){
+                if (response.responseText() == 'capcha failed'){
+                  $('#captcha_code').val('').addClass('is-invalid');
+                }
+                else {
                   $('#contact-form-container').hide();
                   $('#contact-error-container').show();
+                }
               }
            });
         }
