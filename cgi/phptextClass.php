@@ -8,7 +8,7 @@ class phptextClass
 	public function phptext($text,$textColor,$backgroundColor='',$fontSize,$imgWidth,$imgHeight,$dir,$fileName)
 	{
 		/* settings */
-		$font = '/font/monofont.ttf';/*define font*/
+		$font = '/fonts/monofont.ttf';/*define font*/
 		$textColor=$this->hexToRGB($textColor);
 
 		$im = imagecreatetruecolor($imgWidth, $imgHeight);
