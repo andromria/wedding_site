@@ -3,12 +3,13 @@
 created by www.w3schools.in (Gautam kumar)
 April 26, 2014
 */
-$config = include('config.php');
 class phptextClass
 {
 	public function phptext($text,$textColor,$backgroundColor='',$fontSize,$imgWidth,$imgHeight,$dir,$fileName)
 	{
 		/* settings */
+
+		$config = include('config.php');
 		$font = $config['captcha_font'];/*define font*/
 		$textColor=$this->hexToRGB($textColor);
 
@@ -36,6 +37,7 @@ class phptextClass
 	public function phpcaptcha($textColor,$backgroundColor,$imgWidth,$imgHeight,$noiceLines=0,$noiceDots=0,$noiceColor='#162453')
 	{
 		/* Settings */
+		$config = include('config.php');
 		$text=$this->random();
 		$font = $config['captcha_font'];/* font */
 		$textColor=$this->hexToRGB($textColor);
