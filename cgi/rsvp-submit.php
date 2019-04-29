@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $config = include('config.php');
 
     if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0){
