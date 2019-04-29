@@ -1,5 +1,5 @@
 function refreshCaptcha() {
-  $('#captchaimg').attr('src', "cgi/captcha.php?time=" + new Date());
+  $('#captchaimg').attr('src', "cgi/captcha.php?time=" + (new Date()).getTime());
 }
 
 $(document).ready(function () {
