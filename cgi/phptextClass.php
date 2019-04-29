@@ -7,7 +7,7 @@ April 26, 2014
 public function phpcaptcha($textColor,$backgroundColor,$imgWidth,$imgHeight,$noiceLines=0,$noiceDots=0,$noiceColor='#162453')
 {
 /* Settings */$text=$this->random();
-$font = './font/monofont.ttf';/* font */$textColor=$this->hexToRGB($textColor);
+$font = '/fonts/monofont.ttf';/* font */$textColor=$this->hexToRGB($textColor);
 $fontSize = $imgHeight * 0.75;
 
 $im = imagecreatetruecolor($imgWidth, $imgHeight);
