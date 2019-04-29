@@ -33,7 +33,7 @@ $(document).ready(function () {
             }
         },
         submitHandler: function(form, event){
-          $('#captcha_code').val('').removeClass('is-invalid');
+          $('#captcha_code').removeClass('is-invalid');
           var form = $(form);
           var url = form.attr('action');
           $.ajax({
