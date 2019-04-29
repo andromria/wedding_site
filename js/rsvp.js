@@ -42,6 +42,7 @@ $(document).ready(function () {
             }
         },
         submitHandler: function(form, event){
+          $('#captcha_code').removeClass('is-invalid');
           var form = $(form);
           var url = form.attr('action');
           $.ajax({
@@ -52,9 +53,14 @@ $(document).ready(function () {
                   $('#rsvp-form-container').hide();
                   $('#rsvp-submitted-container').show();
               },
-              error: function(){
+              error: function(response){
+                if (response.responseText == 'captcha failed'){
+                  $('#captcha_code').val('').addClass('is-invalid');
+                }
+                else {
                   $('#rsvp-form-container').hide();
                   $('#rsvp-error-container').show();
+                }
               }
            });
         }
