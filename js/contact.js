@@ -1,4 +1,9 @@
+function refreshCaptcha() {
+  $('#captchaimg').attr('src', "cgi/captcha.php?time=" + (new Date()).getTime());
+}
+
 $(document).ready(function () {
+    refreshCaptcha();
     $('#contact-form').validate({
         rules: {
             name: {
@@ -12,6 +17,11 @@ $(document).ready(function () {
             message: {
                 required: true,
                 minlength: 15
+            },
+            captcha_code: {
+                required: true,
+                minlength: 6,
+                maxlength: 6
             }
         },
         validClass: 'is-valid',
@@ -23,6 +33,7 @@ $(document).ready(function () {
             }
         },
         submitHandler: function(form, event){
+          $('#captcha_code').removeClass('is-invalid');
           var form = $(form);
           var url = form.attr('action');
           $.ajax({
@@ -33,9 +44,14 @@ $(document).ready(function () {
                   $('#contact-form-container').hide();
                   $('#contact-submitted-container').show();
               },
-              error: function(){
+              error: function(response){
+                if (response.responseText == 'captcha failed'){
+                  $('#captcha_code').val('').addClass('is-invalid');
+                }
+                else {
                   $('#contact-form-container').hide();
                   $('#contact-error-container').show();
+                }
               }
            });
         }
