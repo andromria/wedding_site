@@ -36,7 +36,7 @@ class phptextClass
 	{
 		/* Settings */
 		$text=$this->random();
-		$font = './font/monofont.ttf';/* font */
+		$font = '../fonts/monofont.ttf';/* font */
 		$textColor=$this->hexToRGB($textColor);
 		$fontSize = $imgHeight * 0.75;
 
