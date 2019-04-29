@@ -3,6 +3,7 @@ function refreshCaptcha() {
 }
 
 $(document).ready(function () {
+    refreshCaptcha();
     $('#rsvp-form').validate({
         rules: {
             name: {
