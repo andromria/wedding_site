@@ -13,9 +13,6 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
 
-  <!-- FlipClock style sheet -->
-  <link href="vendor/flipclock/flipclock.css" rel="stylesheet"></link>
-
   <!-- Custom styles for this template -->
   <link href="css/contact.css" rel="stylesheet"></link>
 
@@ -66,19 +63,19 @@
                             <label for="name">Name:</label>
                             <input type="text" class="form-control" name="name" id="name" placeholder="Your Name"></input>
                         </div>
-                        <div class="form-group addl-fields">
+                        <div class="form-group">
                             <label for="email" class="control-label">Email address:</label>
                             <input type="email" class="form-control" name="email" id="email" placeholder="example@example.email"></input>
                         </div>
                         <div class="form-group">
-                            <label for="name">Message:</label>
+                            <label for="message">Message:</label>
                             <textarea class="form-control" rows="10" name="message" id="message"></textarea>
                         </div>
                         <div class="form-group">
                           <img src="" id='captchaimg'><br>
-                          <label for='message'>Enter the code above here :</label>
+                          <label for='captcha_code'>Enter the code above here :</label>
                           <br>
-                          <input id="captcha_code" name="captcha_code" type="text">
+                          <input class="form-control" id="captcha_code" name="captcha_code" type="text">
                           <br>
                           Can't read the image? click <a href='javascript: refreshCaptcha();'>here</a> to refresh.
                         </div>

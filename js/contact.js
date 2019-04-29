@@ -17,6 +17,11 @@ $(document).ready(function () {
             message: {
                 required: true,
                 minlength: 15
+            },
+            captcha_code: {
+                required: true,
+                minlength: 6,
+                maxlength: 6
             }
         },
         validClass: 'is-valid',

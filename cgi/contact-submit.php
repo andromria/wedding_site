@@ -4,6 +4,9 @@
 
     // code for check server side validation
     if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0){
+      echo 'captcha failed';
+      http_response_code(400);
+    }else{// Captcha verification is Correct. Final Code Execute here!
       $msg_dict = array();
       $msg_dict['time'] = time();
       if (array_key_exists('REMOTE_ADDR', $_SERVER)){
@@ -39,8 +42,5 @@
 
       mail($to, $subject, $message, $headers);
       echo 'submitted';
-    }else{// Captcha verification is Correct. Final Code Execute here!
-      echo 'captcha failed';
-      http_response_code(400);
     }
 ?>
