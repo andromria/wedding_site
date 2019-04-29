@@ -45,7 +45,7 @@ $(document).ready(function () {
                   $('#contact-submitted-container').show();
               },
               error: function(response){
-                if (response.responseText() == 'capcha failed'){
+                if (response.responseText() == 'captcha failed'){
                   $('#captcha_code').val('').addClass('is-invalid');
                 }
                 else {
